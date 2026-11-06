@@ -67,9 +67,17 @@ html[data-lang="zh"] .archive {
   color: #fff;
   opacity: 1;
 }
-.kz-lang.masthead__menu-item > a { display: none; }
+/* 顶栏切换器用 <a> 而不是 <button>：模板的 greedy-navigation 脚本
+   用 $('#site-nav button') 选中所有按钮，会误把语言按钮设为 hidden。 */
 .kz-lang.masthead__menu-item { display: flex; align-items: center; }
-.kz-lang.masthead__menu-item .kz-lang__btn { font-size: .68em; padding: .3em .6em; }
+.kz-lang.masthead__menu-item .kz-lang__btn {
+  display: inline-block;
+  font-size: .7em;
+  padding: .34em .72em;
+  color: inherit;
+  line-height: 1.4;
+}
+.kz-lang.masthead__menu-item .kz-lang__btn.is-active { color: #fff; }
 
 .kz-footer-note {
   font-size: .72em;

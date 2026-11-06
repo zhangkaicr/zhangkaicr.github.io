@@ -48,7 +48,9 @@
 
   document.addEventListener("click", function (e) {
     var btn = e.target && e.target.closest ? e.target.closest("[data-lang-btn]") : null;
-    if (btn) apply(btn.getAttribute("data-lang-btn"));
+    if (!btn) return;
+    if (e.preventDefault) e.preventDefault(); // 顶栏是 <a href="#">，避免跳到页首
+    apply(btn.getAttribute("data-lang-btn"));
   });
 
   /* ---------- 论文筛选 ---------- */
