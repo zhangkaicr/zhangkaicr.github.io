@@ -25,6 +25,11 @@ author_profile: true
 
 <p>哔哩哔哩：<a href="https://space.bilibili.com/627812104" target="_blank" rel="noopener noreferrer">灵活胖子的进步之路</a><br>小红书：<a href="https://www.xiaohongshu.com/search_result?keyword=94148178085" target="_blank" rel="noopener noreferrer">小红书号 94148178085</a><br>微信公众号：灵活胖子的科研进步之路 / 灵活胖子的柳叶刀进步之路</p>
 
+<div class="kz-qr">
+  <img src="/images/wechat-qr.jpg" alt="公众号二维码">
+  <div class="kz-qr__text"><p>公众号二维码 · 微信扫码关注</p></div>
+</div>
+
 </div>
 
 <div class="lang-en">
@@ -44,5 +49,10 @@ author_profile: true
 <h2 class="kz-subhead">Elsewhere</h2>
 
 <p>Bilibili: <a href="https://space.bilibili.com/627812104" target="_blank" rel="noopener noreferrer">灵活胖子的进步之路</a><br>Xiaohongshu (RED): <a href="https://www.xiaohongshu.com/search_result?keyword=94148178085" target="_blank" rel="noopener noreferrer">ID 94148178085</a><br>WeChat official accounts: 灵活胖子的科研进步之路 / 灵活胖子的柳叶刀进步之路</p>
+
+<div class="kz-qr">
+  <img src="/images/wechat-qr.jpg" alt="WeChat QR code">
+  <div class="kz-qr__text"><p>WeChat QR code · scan to follow</p></div>
+</div>
 
 </div>

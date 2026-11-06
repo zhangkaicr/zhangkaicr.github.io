@@ -16,6 +16,7 @@ author_profile: true
   <span class="kz-tl__period">{{ talk.date | date: "%Y.%m.%d" }} · <span class="lang-zh">{{ talk.location_zh }}</span><span class="lang-en">{{ talk.location_en }}</span></span>
   <h3><a href="{{ talk.url }}"><span class="lang-zh">{{ talk.title_zh | default: talk.title }}</span><span class="lang-en">{{ talk.title_en | default: talk.title }}</span></a></h3>
   <p><span class="lang-zh">{{ talk.venue_zh }}</span><span class="lang-en">{{ talk.venue_en }}</span>{% if talk.duration %} · {{ talk.duration }}{% endif %}</p>
+  <p class="kz-pub__summary"><span class="lang-zh">{{ talk.summary_zh }}</span><span class="lang-en">{{ talk.summary_en }}</span></p>
   {% if talk.slidesurl %}<p><a href="{{ talk.slidesurl }}" download><span class="lang-zh">下载讲义 PPTX ↗</span><span class="lang-en">Download slides (PPTX) ↗</span></a>{% if talk.slides_note %} — <span class="lang-zh">{{ talk.slides_note_zh }}</span><span class="lang-en">{{ talk.slides_note_en }}</span>{% endif %}</p>{% endif %}
 </div>
 {% endfor %}

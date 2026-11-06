@@ -25,10 +25,11 @@ author_profile: true
   <h3 class="kz-year">{{ pub.year }}</h3>
   {% assign prev = pub.year %}
   {% endif %}
-  {% capture hay %}{{ pub.title }} {{ pub.journal }} {{ pub.year }} {{ pub.tag_zh }} {{ pub.tag_en }} {{ pub.doi }} {{ pub.pmid }}{% endcapture %}
+  {% capture hay %}{{ pub.title }} {{ pub.venue }} {{ pub.year }} {{ pub.tag_zh }} {{ pub.tag_en }} {{ pub.doi }} {{ pub.pmid }} {{ pub.summary_zh }} {{ pub.summary_en }}{% endcapture %}
   <div class="kz-pub" data-search="{{ hay | escape }}">
     <p class="kz-pub__title"><a href="{{ pub.url }}">{{ pub.title | escape }}</a></p>
-    <p class="kz-pub__meta"><span class="kz-pub__journal">{{ pub.journal | escape }}</span><span class="kz-tag"><span class="lang-zh">{{ pub.tag_zh }}</span><span class="lang-en">{{ pub.tag_en }}</span></span></p>
+    <p class="kz-pub__meta"><span class="kz-pub__journal">{{ pub.venue | escape }}</span><span class="kz-tag"><span class="lang-zh">{{ pub.tag_zh }}</span><span class="lang-en">{{ pub.tag_en }}</span></span></p>
+    <p class="kz-pub__summary"><span class="lang-zh">{{ pub.summary_zh }}</span><span class="lang-en">{{ pub.summary_en }}</span></p>
     {% assign pm = pub.pmid | default: "" %}
     <p class="kz-pub__links">
       {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}

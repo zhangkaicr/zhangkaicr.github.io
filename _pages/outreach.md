@@ -33,6 +33,14 @@ author_profile: true
 
 </div>
 
+<div class="kz-qr">
+  <img src="/images/wechat-qr.jpg" alt="公众号二维码">
+  <div class="kz-qr__text">
+    <p>公众号二维码 · 微信扫码关注</p>
+    <p>灵活胖子的科研进步之路<br>灵活胖子的柳叶刀进步之路</p>
+  </div>
+</div>
+
 <h2 class="kz-subhead">公开讲义</h2>
 
 <p>2025 中国医师协会介入医师年会（CCI 2025）受邀报告讲义，共 29 页，覆盖潜在结果框架、目标试验模拟七要素、倾向评分、克隆删失加权、g-方程与 LMTP 等方法。</p>
@@ -65,6 +73,14 @@ author_profile: true
 <a href="https://www.xiaohongshu.com/search_result?keyword=94148178085" target="_blank" rel="noopener noreferrer">Visit profile ↗</a>
 </div>
 
+</div>
+
+<div class="kz-qr">
+  <img src="/images/wechat-qr.jpg" alt="WeChat QR code">
+  <div class="kz-qr__text">
+    <p>WeChat QR code · scan to follow</p>
+    <p>灵活胖子的科研进步之路<br>灵活胖子的柳叶刀进步之路</p>
+  </div>
 </div>
 
 <h2 class="kz-subhead">Open teaching material</h2>

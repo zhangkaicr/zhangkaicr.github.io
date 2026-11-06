@@ -38,8 +38,10 @@
 | 姓名 / 单位 / 侧栏链接 / ORCID | `_config.yml` 的 `author` 段 + `_data/i18n.yml` |
 | 导航项 | `_data/navigation.yml` |
 | 首页、简历、教学、报告、科普、联系页 | `_pages/about.md`、`cv.md`、`talks.html`、`teaching.html`、`outreach.md`、`contact.md` |
-| 新增论文 | 在 `_publications/` 新建一个 `.md`，参考现有文件的 front matter（`title/year/venue/doi/pmid/tag_zh/tag_en`），列表页自动收录 |
-| 新增报告 / 课程 | `_talks/` 或 `_teaching/` 新建 `.md` |
+| 新增论文 | 在 `_publications/` 新建一个 `.md`，参考现有文件的 front matter（`title/year/venue/doi/pmid/tag_zh/tag_en/summary_zh/summary_en`），列表页自动收录 |
+| 新增报告 / 课程 | `_talks/` 或 `_teaching/` 新建 `.md`（课程可带 `period_*` / `meta_*` / `text_*` / `notice`） |
+| 软件 / 开源包 | `_pages/software.md` |
+| 头像与二维码 | `images/kz-avatar.jpg`、`images/wechat-qr.jpg` |
 | 界面文案、组件样式 | `_data/i18n.yml` / `assets/css/bilingual.css` |
 | 讲义等附件 | `files/` 目录，通过 `/files/<文件名>` 访问 |
 
@@ -51,8 +53,25 @@
 - **CCI 2025 受邀报告**：来自年会邀请函与会议沟通记录，2025.11.22 南京、15 分钟；29 页讲义放在 `files/KaiZhang-TTE-CCI2025.pptx`。
 - **公众号**：「灵活胖子的科研进步之路」「灵活胖子的柳叶刀进步之路」，微信内搜索名称关注（公众号没有公开直链）。
 - **B站**：`https://space.bilibili.com/627812104`；**小红书**：小红书号 `94148178085`，当前链接指向站内搜索结果页，拿到 `/user/profile/...` 形式的个人主页后替换即可。
-- `teaching` 三条为按现有课程/视频方向整理的描述，可按实际开课情况调整。
-- 头像 `images/kz-avatar.svg` 目前是 KZ 字母组合，换成真实照片后改 `_config.yml` 的 `author.avatar`。
+- `teaching` 三条均来自正式培训通知，含学时、形式、主办单位、课程目标与原文链接。
+- 头像 `images/kz-avatar.jpg` 来自本人提供的插画；`favicon.svg` / `favicon-*.png` / `apple-touch-icon-*.png` 也都由同一张图生成。换照片后覆盖 `images/kz-avatar.jpg` 并重新运行头像生成脚本即可。
+- **研究方向**按名片图设置：因果推断 / 医学人工智能 / 生物信息学（方法学），精准肝脏外科 / 精准医学（临床）；角色为「数据科学家」。
+- **Software 页**：介绍本人开发维护的 R 包 [`mlr3HTE`](https://github.com/zhangkaicr/mlr3HTE)（mlr3 原生 HTE 元学习器），文档站 `https://zhangkaicr.github.io/mlr3HTE/`。
+- **实战培训课程**来自三篇公众号通知：TTE 实战班（2026.9.12–13，19 学时）、机器学习因果推断 / 个体化治疗决策班（2026.10.24–25，16 学时）、AI Agent 生存分析与动态预测模型班（2026.12.26–27，20 学时）；每条含课程目标与原文链接。
+- **公众号二维码** `images/wechat-qr.jpg` 展示在 Outreach 与 Contact 页。
+- **每篇论文 / 报告均有中英简要介绍**：论文写在 `_publications/*.md` 的 `summary_zh` / `summary_en` 字段，列表页与详情页都会渲染；报告写在 `_talks/*.md` 的 `summary_zh` / `summary_en`。
+
+## 关于更短的 github.io 网址
+
+GitHub Pages 的用户/组织页网址固定为 `<账号名或组织名>.github.io`，**前缀不能自定义**，也不能用 CNAME 指向别人的 `github.io` 子域。
+
+- 当前 `https://zhangkaicr.github.io/` 来自 GitHub 用户名 `zhangkaicr`。
+- `zhangkai` 这个名字已被另一个 GitHub 用户占用（`GET /users/zhangkai` 返回 200），所以 `zhangkai.github.io` 无法取得。
+- 想要更短、更贴合姓名的网址，只有两条路：
+  1. 在 GitHub 网页新建一个**组织**，用未被占用的名字（已核实可用：`zhangkai-md`、`zhangkai-cams`、`zhangkai-cr`、`zhangkai-lab`、`kai-zhang-cams`），再把本仓库转移到该组织并改名为 `<组织名>.github.io`。转移后 Pages 网址即 `https://<组织名>.github.io/`。创建组织没有公开 API，需要在网页端点一次。
+  2. 购买自定义域名（如 `zhangkai.cn`），在仓库加 `CNAME` 文件并在域名商处配置 DNS。
+
+站内链接全部使用根相对路径（`/publications/`、`/software/` 等），迁移到任何域名只需改 `_config.yml` 的 `url` / `repository`，无需改内容。
 
 ## 回滚
 

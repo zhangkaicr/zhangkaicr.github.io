@@ -265,10 +265,89 @@ html[data-lang="zh"] .archive {
 .kz-account__detail { margin: 0 0 .5rem; font-size: .82em; opacity: .78; line-height: 1.65; }
 .kz-account__hint { font-size: .78em; opacity: .65; }
 
+/* 三栏研究方向 / 临床方向标签 */
+.kz-cards--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kz-card__en {
+  display: inline-block;
+  font-size: .72em;
+  font-weight: 500;
+  opacity: .6;
+  margin-left: .3em;
+}
+.kz-clinical { display: flex; flex-wrap: wrap; gap: .7rem; margin: .6rem 0 1.6rem; }
+.kz-pill {
+  display: inline-block;
+  border: 1px solid var(--kz-accent);
+  border-radius: 999px;
+  padding: .42em 1em;
+  font-size: .92em;
+  font-weight: 600;
+}
+.kz-pill__en { font-size: .76em; font-weight: 500; opacity: .65; margin-left: .4em; }
+
+/* 论文 / 报告简要介绍 */
+.kz-pub__summary {
+  margin: .35rem 0 0;
+  font-size: .84em;
+  line-height: 1.7;
+  opacity: .78;
+}
+
+/* Software 卡片 */
+.kz-software {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 1.2rem;
+  border: 1px solid rgba(127,127,127,.24);
+  border-radius: 9px;
+  padding: 1.3rem;
+  background: rgba(127,127,127,.055);
+  margin: 1rem 0 1.4rem;
+}
+.kz-software__logo {
+  display: grid;
+  place-items: center;
+  width: 92px; height: 92px;
+  border-radius: 16px;
+  background: var(--kz-fill);
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.kz-software h3 { margin: 0 0 .35rem; font-size: 1.1em; }
+.kz-software p { margin: 0 0 .6rem; font-size: .9em; line-height: 1.75; opacity: .84; }
+.kz-software__links { display: flex; flex-wrap: wrap; gap: .5rem 1.1rem; font-size: .84em; font-weight: 600; }
+.kz-feature-list { display: flex; flex-wrap: wrap; gap: .45rem; margin: .8rem 0 0; padding: 0; list-style: none; }
+.kz-feature-list li {
+  font-size: .78em;
+  border: 1px solid rgba(127,127,127,.28);
+  border-radius: 4px;
+  padding: .2em .6em;
+  opacity: .85;
+}
+
+/* 公众号二维码 */
+.kz-qr { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; margin: 1rem 0 1.4rem; }
+.kz-qr img {
+  width: 160px; height: 160px;
+  border: 1px solid rgba(127,127,127,.25);
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px;
+}
+.kz-qr__text { font-size: .86em; line-height: 1.8; opacity: .82; }
+.kz-qr__text p { margin: 0 0 .35rem; }
+
 /* 响应式 */
+@media (max-width: 980px) {
+  .kz-cards--three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 768px) {
-  .kz-cards, .kz-accounts { grid-template-columns: 1fr; }
+  .kz-cards, .kz-cards--three, .kz-accounts { grid-template-columns: 1fr; }
   .kz-exp__item { grid-template-columns: 6.5em minmax(0,1fr); gap: .6rem; }
+  .kz-software { grid-template-columns: 1fr; }
+  .kz-qr img { width: 140px; height: 140px; }
 }
 
 @media print {

@@ -1,21 +1,26 @@
 ---
 layout: archive
 title: "教学 / Teaching"
-title_zh: "教学与方法学传播"
-title_en: "Teaching & Methodology Outreach"
+title_zh: "实战培训课程"
+title_en: "Hands-on Training Courses"
 permalink: /teaching/
 author_profile: true
 ---
 
-<div class="lang-zh kz-note"><p>把因果推断讲给临床医生听：系统课程、文献分享，以及配套可复现的 R / Python 代码。</p></div>
-<div class="lang-en kz-note"><p>Making causal inference usable for clinicians: structured courses, journal clubs, and reproducible R / Python code.</p></div>
+<div class="lang-zh kz-note"><p>面向临床研究者的实战培训班，围绕目标试验模拟、机器学习因果推断与动态预测模型展开；均为线上直播 + 北京线下同步，采用「理论讲解 + R 代码实操 + 结果解读」的闭环教学，并提供可复现代码与模拟数据。</p></div>
+<div class="lang-en kz-note"><p>Hands-on courses for clinical researchers on target trial emulation, machine-learning causal inference and dynamic prediction models. All courses run live online with an on-site option in Beijing, following a theory + R code + interpretation loop with reproducible code and simulated data.</p></div>
 
 <div class="kz-tl">
 {% for item in site.teaching reversed %}
 <div class="kz-tl__item">
   <span class="kz-tl__period"><span class="lang-zh">{{ item.period_zh }}</span><span class="lang-en">{{ item.period_en }}</span></span>
   <h3><a href="{{ item.url }}"><span class="lang-zh">{{ item.title_zh | default: item.title }}</span><span class="lang-en">{{ item.title_en | default: item.title }}</span></a></h3>
+  <p class="kz-note"><span class="lang-zh">{{ item.meta_zh }}</span><span class="lang-en">{{ item.meta_en }}</span></p>
   <p><span class="lang-zh">{{ item.text_zh }}</span><span class="lang-en">{{ item.text_en }}</span></p>
+  {% if item.notice %}<p><a href="{{ item.notice | escape }}" target="_blank" rel="noopener noreferrer"><span class="lang-zh">查看培训通知 ↗</span><span class="lang-en">Course announcement ↗</span></a> · <a href="{{ item.url }}"><span class="lang-zh">课程目标与大纲</span><span class="lang-en">Objectives &amp; syllabus</span></a></p>{% endif %}
 </div>
 {% endfor %}
 </div>
+
+<div class="lang-zh kz-note"><p>课程通知由公众号「灵活胖子的科研进步之路」发布；配套开源工具见 <a href="/software/">Software</a> 页面。</p></div>
+<div class="lang-en kz-note"><p>Course announcements are published on the WeChat official account 灵活胖子的科研进步之路; companion open-source tools are listed under <a href="/software/">Software</a>.</p></div>

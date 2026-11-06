@@ -22,10 +22,10 @@ repository               : "zhangkaicr/zhangkaicr.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "kz-avatar.svg"
+  avatar           : "kz-avatar.jpg"
   name             : "Kai Zhang, MD"
   pronouns         :
-  bio              : "Hepatobiliary surgeon & medical data scientist: target trial emulation, causal inference, real-world evidence."
+  bio              : "Data scientist working on target trial emulation, causal inference, medical AI and bioinformatics."
   location         : "Beijing, China"
   employer         : "Cancer Hospital, CAMS & PUMC"
   uri              : # URL

@@ -5,6 +5,10 @@ main:
     title_zh: "论文"
     url: /publications/
 
+  - title: "Software"
+    title_zh: "软件"
+    url: /software/
+
   - title: "Talks"
     title_zh: "学术报告"
     url: /talks/
