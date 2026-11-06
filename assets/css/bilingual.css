@@ -1,8 +1,19 @@
 /* =============================================================
    bilingual.css — academicpages 之上的中英双语层与内容组件
    所有自定义类统一 kz- 前缀，避免与 Minimal Mistakes 冲突。
-   颜色用半透明中性色，兼容模板自带的浅色/深色主题切换。
+   颜色用半透明中性色 + 主题自适应强调色，兼容模板浅色/深色切换。
    ============================================================= */
+
+:root {
+  --kz-accent: #146b74;      /* 强调文字色（浅色主题） */
+  --kz-fill: #146b74;        /* 实心按钮底色（始终深色，配白字） */
+  --kz-fill-hover: #0d4c58;
+}
+html[data-theme="dark"] {
+  --kz-accent: #6fd0d8;
+  --kz-fill: #177f89;
+  --kz-fill-hover: #1b939e;
+}
 
 /* 语言可见性：<html data-lang="zh|en"> 由 head/custom.html 中的早期脚本设置 */
 html[data-lang="zh"] .lang-en { display: none !important; }
@@ -47,12 +58,12 @@ html[data-lang="zh"] .archive {
   transition: background .18s ease, color .18s ease, opacity .18s ease;
 }
 .kz-lang__btn:first-of-type { border-radius: 999px 0 0 999px; }
-.kz-lang__btn:last-of-type { border-radius: 0 999px 999px 0; border-left: 0; }
+.kz-lang__btn:last-of-type { border-radius: 0 999px 999px 0; }
 .kz-lang__btn + .kz-lang__btn { border-left: 0; }
 .kz-lang__btn:hover { opacity: 1; }
 .kz-lang__btn.is-active {
-  background: #146b74;
-  border-color: #146b74;
+  background: var(--kz-fill);
+  border-color: var(--kz-fill);
   color: #fff;
   opacity: 1;
 }
@@ -62,38 +73,48 @@ html[data-lang="zh"] .archive {
 
 .kz-footer-note {
   font-size: .72em;
-  opacity: .65;
+  opacity: .68;
   text-align: center;
   margin-bottom: .6rem;
 }
 
 /* 通用小组件 */
 .kz-subhead {
-  font-size: .78em;
+  font-size: 1.12em;
   font-weight: 700;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: #146b74;
-  margin: 2rem 0 .8rem;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--kz-accent);
+  border-bottom: 1px solid rgba(127,127,127,.3);
+  padding-bottom: .35rem;
+  margin: 2rem 0 1rem;
 }
-.kz-lead { font-size: 1.06em; line-height: 1.85; opacity: .88; }
-.kz-note { font-size: .84em; opacity: .68; }
+.kz-lead { font-size: 1.06em; line-height: 1.85; opacity: .9; }
+.kz-note { font-size: .86em; opacity: .72; }
 .kz-btn {
   display: inline-flex;
   align-items: center;
   gap: .45em;
   padding: .45em 1em;
-  border: 1px solid #146b74;
+  border: 1px solid var(--kz-fill);
   border-radius: 4px;
-  background: #146b74;
+  background: var(--kz-fill);
   color: #fff !important;
-  font-size: .82em;
+  font-size: .84em;
   font-weight: 600;
   text-decoration: none !important;
 }
-.kz-btn:hover { background: #0d4c58; border-color: #0d4c58; }
-.kz-btn--ghost { background: transparent; color: #146b74 !important; }
-.kz-btn--ghost:hover { background: rgba(20,107,116,.08); color: #146b74 !important; }
+.kz-btn:hover { background: var(--kz-fill-hover); border-color: var(--kz-fill-hover); color: #fff !important; }
+.kz-btn--ghost {
+  background: transparent;
+  color: inherit !important;
+  border-color: var(--kz-accent);
+}
+.kz-btn--ghost:hover {
+  background: rgba(20,107,116,.14);
+  color: inherit !important;
+  border-color: var(--kz-accent);
+}
 .kz-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.3rem 0 1.6rem; }
 
 /* 首页研究方向卡片 */
@@ -107,21 +128,21 @@ html[data-lang="zh"] .archive {
   border: 1px solid rgba(127,127,127,.24);
   border-radius: 8px;
   padding: 1.1rem 1.2rem;
-  background: rgba(127,127,127,.045);
+  background: rgba(127,127,127,.055);
 }
 .kz-card__badge {
   display: inline-block;
-  font-size: .64em;
+  font-size: .66em;
   font-weight: 700;
   letter-spacing: .09em;
-  color: #146b74;
-  background: rgba(20,107,116,.11);
+  color: var(--kz-accent);
+  background: rgba(20,107,116,.14);
   border-radius: 3px;
   padding: .3em .55em;
   margin-bottom: .6rem;
 }
 .kz-card h3 { margin: 0 0 .4rem; font-size: 1rem; }
-.kz-card p { margin: 0; font-size: .86em; line-height: 1.7; opacity: .78; }
+.kz-card p { margin: 0; font-size: .88em; line-height: 1.72; opacity: .82; }
 
 /* 论文列表 */
 .kz-pub-tools {
@@ -139,8 +160,9 @@ html[data-lang="zh"] .archive {
   border: 1px solid rgba(127,127,127,.3);
   border-radius: 5px;
   padding: 0 .7rem;
-  min-width: min(320px, 100%);
+  min-width: min(340px, 100%);
 }
+.kz-search > span { font-size: .8em; opacity: .62; white-space: nowrap; }
 .kz-search input {
   border: 0;
   outline: 0;
@@ -151,10 +173,10 @@ html[data-lang="zh"] .archive {
   padding: .5rem 0;
   width: 100%;
 }
-.kz-pub-count { font-size: .78em; opacity: .65; white-space: nowrap; }
+.kz-pub-count { font-size: .8em; opacity: .7; white-space: nowrap; }
 .kz-year {
-  font-size: 1.25em;
-  color: #146b74;
+  font-size: 1.3em;
+  color: var(--kz-accent);
   border-bottom: 1px solid rgba(127,127,127,.24);
   padding-bottom: .3rem;
   margin: 1.8rem 0 .5rem;
@@ -165,23 +187,23 @@ html[data-lang="zh"] .archive {
 }
 .kz-pub__title {
   margin: 0 0 .3rem;
-  font-size: .95em;
+  font-size: .96em;
   font-weight: 600;
   line-height: 1.6;
 }
-.kz-pub__meta { margin: 0; font-size: .8em; opacity: .72; }
+.kz-pub__meta { margin: 0; font-size: .82em; opacity: .75; }
 .kz-pub__journal { font-style: italic; }
 .kz-tag {
   display: inline-block;
   margin-left: .6em;
   padding: .05em .55em;
   border-radius: 999px;
-  background: rgba(20,107,116,.11);
-  color: #146b74;
+  background: rgba(20,107,116,.16);
+  color: inherit;
   font-size: .92em;
   font-style: normal;
 }
-.kz-pub__links { margin: .3rem 0 0; font-size: .78em; font-weight: 600; }
+.kz-pub__links { margin: .3rem 0 0; font-size: .8em; font-weight: 600; }
 .kz-pub__links .dot { opacity: .4; margin: 0 .5em; }
 .kz-empty { padding: 2rem 0; opacity: .6; }
 
@@ -194,11 +216,11 @@ html[data-lang="zh"] .archive {
   padding: .8rem 0;
   border-bottom: 1px solid rgba(127,127,127,.16);
 }
-.kz-exp__period { font-size: .8em; font-weight: 700; color: #146b74; padding-top: .15em; }
-.kz-exp__title { margin: 0 0 .15rem; font-size: .93em; font-weight: 600; }
-.kz-exp__org { margin: 0; font-size: .84em; opacity: .72; }
-.kz-exp__item.is-current .kz-exp__period { color: #b07b12; }
-.kz-exp__slides { display: inline-block; margin-top: .35rem; font-size: .8em; font-weight: 600; }
+.kz-exp__period { font-size: .82em; font-weight: 700; color: var(--kz-accent); padding-top: .15em; }
+.kz-exp__title { margin: 0 0 .15rem; font-size: .95em; font-weight: 600; }
+.kz-exp__org { margin: 0; font-size: .86em; opacity: .76; }
+.kz-exp__item.is-current .kz-exp__period { color: #d79b34; }
+.kz-exp__slides { display: inline-block; margin-top: .35rem; font-size: .82em; font-weight: 600; }
 
 /* 教学 / 报告时间线 */
 .kz-tl { border-left: 2px solid rgba(127,127,127,.24); padding-left: 1.4rem; }
@@ -210,12 +232,12 @@ html[data-lang="zh"] .archive {
   top: .5em;
   width: 9px; height: 9px;
   border-radius: 50%;
-  background: #146b74;
-  box-shadow: 0 0 0 3px rgba(20,107,116,.14);
+  background: var(--kz-fill);
+  box-shadow: 0 0 0 3px rgba(20,107,116,.2);
 }
-.kz-tl__period { font-size: .74em; font-weight: 700; letter-spacing: .04em; color: #146b74; }
-.kz-tl__item h3 { margin: .15rem 0 .3rem; font-size: .98em; }
-.kz-tl__item p { margin: 0; font-size: .86em; opacity: .78; line-height: 1.7; }
+.kz-tl__period { font-size: .76em; font-weight: 700; letter-spacing: .04em; color: var(--kz-accent); }
+.kz-tl__item h3 { margin: .15rem 0 .3rem; font-size: 1em; }
+.kz-tl__item p { margin: 0; font-size: .88em; opacity: .82; line-height: 1.7; }
 
 /* 科普平台卡片 */
 .kz-accounts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .9rem; }
@@ -223,11 +245,11 @@ html[data-lang="zh"] .archive {
   border: 1px solid rgba(127,127,127,.24);
   border-radius: 7px;
   padding: 1rem;
-  background: rgba(127,127,127,.045);
+  background: rgba(127,127,127,.055);
 }
-.kz-account__label { margin: 0 0 .3rem; font-size: .88em; font-weight: 700; }
-.kz-account__detail { margin: 0 0 .5rem; font-size: .8em; opacity: .75; line-height: 1.65; }
-.kz-account__hint { font-size: .76em; opacity: .6; }
+.kz-account__label { margin: 0 0 .3rem; font-size: .9em; font-weight: 700; }
+.kz-account__detail { margin: 0 0 .5rem; font-size: .82em; opacity: .78; line-height: 1.65; }
+.kz-account__hint { font-size: .78em; opacity: .65; }
 
 /* 响应式 */
 @media (max-width: 768px) {
