@@ -86,6 +86,12 @@ html[data-lang="zh"] .archive {
   margin-bottom: .6rem;
 }
 
+/* 模板把 .page__footer 设为 position:fixed，滚动时会遮住正文；改回正常文档流 */
+.page__footer {
+  position: relative;
+  bottom: auto;
+}
+
 /* 通用小组件 */
 .kz-subhead {
   font-size: 1.12em;

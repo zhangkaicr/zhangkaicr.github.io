@@ -29,11 +29,12 @@ author_profile: true
   <div class="kz-pub" data-search="{{ hay | escape }}">
     <p class="kz-pub__title"><a href="{{ pub.url }}">{{ pub.title | escape }}</a></p>
     <p class="kz-pub__meta"><span class="kz-pub__journal">{{ pub.journal | escape }}</span><span class="kz-tag"><span class="lang-zh">{{ pub.tag_zh }}</span><span class="lang-en">{{ pub.tag_en }}</span></span></p>
+    {% assign pm = pub.pmid | default: "" %}
     <p class="kz-pub__links">
       {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
-      {% if pub.doi and pub.pmid %}<span class="dot">·</span>{% endif %}
-      {% if pub.pmid %}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/" target="_blank" rel="noopener noreferrer">PubMed</a>{% endif %}
-      {% if pub.doi or pub.pmid %}<span class="dot">·</span>{% endif %}
+      {% if pub.doi and pm != "" %}<span class="dot">·</span>{% endif %}
+      {% if pm != "" %}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ pm }}/" target="_blank" rel="noopener noreferrer">PubMed</a>{% endif %}
+      {% if pub.doi or pm != "" %}<span class="dot">·</span>{% endif %}
       <a href="{{ pub.url }}"><span class="lang-zh">详情</span><span class="lang-en">Details</span></a>
     </p>
   </div>
