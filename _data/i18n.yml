@@ -1,0 +1,29 @@
+# 中英双语界面文案（侧栏、顶栏、页脚、语言切换）
+# 正文内容放在 _pages/*.md|html 的 .lang-zh / .lang-en 块里
+
+site_title_zh: "张凯 · 学术主页"
+site_title_en: "Kai Zhang · Academic Homepage"
+
+name_zh: "张凯"
+name_en: "Kai Zhang, MD"
+role_zh: "医学博士 · 肝胆外科 · 临床研究方法学"
+role_en: "MD · Hepatobiliary Surgery · Clinical Research Methodology"
+bio_zh: "肝胆外科医师、医学数据科学研究者。关注目标试验模拟、因果推断与真实世界证据。"
+bio_en: "Hepatobiliary surgeon and medical data scientist working on target trial emulation, causal inference and real-world evidence."
+location_zh: "北京 · 中国"
+location_en: "Beijing, China"
+employer_zh: "中国医学科学院肿瘤医院 · 肝胆外科"
+employer_en: "Cancer Hospital, CAMS & PUMC · Hepatobiliary Surgery"
+
+desc_zh: "张凯（Kai Zhang）的学术主页：目标试验模拟、因果推断、真实世界证据与肝胆肿瘤临床研究。"
+desc_en: "Academic homepage of Kai Zhang: target trial emulation, causal inference, real-world evidence and hepato-biliary oncology."
+
+bilibili_label_zh: "哔哩哔哩"
+bilibili_label_en: "Bilibili"
+xhs_label_zh: "小红书"
+xhs_label_en: "Xiaohongshu (RED)"
+slides_label_zh: "会议讲义下载"
+slides_label_en: "Talk slides"
+
+footer_zh: "版式基于 academicpages / Minimal Mistakes · 中英双语一键切换 · 论文信息以 ORCID 公开记录为依据"
+footer_en: "Built on academicpages / Minimal Mistakes · instant 中文 / EN switch · Publications sourced from the public ORCID record"

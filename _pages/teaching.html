@@ -1,0 +1,21 @@
+---
+layout: archive
+title: "教学 / Teaching"
+title_zh: "教学与方法学传播"
+title_en: "Teaching & Methodology Outreach"
+permalink: /teaching/
+author_profile: true
+---
+
+<div class="lang-zh kz-note"><p>把因果推断讲给临床医生听：系统课程、文献分享，以及配套可复现的 R / Python 代码。</p></div>
+<div class="lang-en kz-note"><p>Making causal inference usable for clinicians: structured courses, journal clubs, and reproducible R / Python code.</p></div>
+
+<div class="kz-tl">
+{% for item in site.teaching reversed %}
+<div class="kz-tl__item">
+  <span class="kz-tl__period"><span class="lang-zh">{{ item.period_zh }}</span><span class="lang-en">{{ item.period_en }}</span></span>
+  <h3><a href="{{ item.url }}"><span class="lang-zh">{{ item.title_zh | default: item.title }}</span><span class="lang-en">{{ item.title_en | default: item.title }}</span></a></h3>
+  <p><span class="lang-zh">{{ item.text_zh }}</span><span class="lang-en">{{ item.text_en }}</span></p>
+</div>
+{% endfor %}
+</div>

@@ -1,0 +1,45 @@
+---
+layout: archive
+title: "论文成果 / Publications"
+title_zh: "论文成果"
+title_en: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+<div class="lang-zh kz-note"><p>以下 15 项成果来自 <a href="https://orcid.org/0000-0002-2292-3696">ORCID 公开记录</a>，按年份倒序排列。标题保留英文原文，便于引用与检索；点击标题可查看单篇详情页。</p></div>
+<div class="lang-en kz-note"><p>The 15 works below come from the public <a href="https://orcid.org/0000-0002-2292-3696">ORCID record</a>, listed newest first. Titles are kept in their original English for citation and search; click a title to open its detail page.</p></div>
+
+<div class="kz-pub-tools">
+  <label class="kz-search">
+    <span class="lang-zh">筛选论文…</span><span class="lang-en">Filter publications…</span>
+    <input type="search" id="kz-pub-filter" autocomplete="off" aria-label="Filter publications">
+  </label>
+  <span class="kz-pub-count" id="kz-pub-count" data-tpl-zh="共 {n} 篇" data-tpl-en="{n} works"></span>
+</div>
+
+<div id="kz-pub-list">
+{% assign prev = "" %}
+{% for pub in site.publications reversed %}
+  {% if pub.year != prev %}
+  <h3 class="kz-year">{{ pub.year }}</h3>
+  {% assign prev = pub.year %}
+  {% endif %}
+  {% capture hay %}{{ pub.title }} {{ pub.journal }} {{ pub.year }} {{ pub.tag_zh }} {{ pub.tag_en }} {{ pub.doi }} {{ pub.pmid }}{% endcapture %}
+  <div class="kz-pub" data-search="{{ hay | escape }}">
+    <p class="kz-pub__title"><a href="{{ pub.url }}">{{ pub.title | escape }}</a></p>
+    <p class="kz-pub__meta"><span class="kz-pub__journal">{{ pub.journal | escape }}</span><span class="kz-tag"><span class="lang-zh">{{ pub.tag_zh }}</span><span class="lang-en">{{ pub.tag_en }}</span></span></p>
+    <p class="kz-pub__links">
+      {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+      {% if pub.doi and pub.pmid %}<span class="dot">·</span>{% endif %}
+      {% if pub.pmid %}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/" target="_blank" rel="noopener noreferrer">PubMed</a>{% endif %}
+      {% if pub.doi or pub.pmid %}<span class="dot">·</span>{% endif %}
+      <a href="{{ pub.url }}"><span class="lang-zh">详情</span><span class="lang-en">Details</span></a>
+    </p>
+  </div>
+{% endfor %}
+<div class="kz-empty" id="kz-pub-empty" hidden><span class="lang-zh">没有匹配的论文</span><span class="lang-en">No matching publications</span></div>
+</div>
+
+<div class="lang-zh kz-note"><p>完整、持续更新的成果列表请见 <a href="https://orcid.org/0000-0002-2292-3696">ORCID 公开档案</a>。</p></div>
+<div class="lang-en kz-note"><p>For a complete, continuously updated list, see the public <a href="https://orcid.org/0000-0002-2292-3696">ORCID record</a>.</p></div>

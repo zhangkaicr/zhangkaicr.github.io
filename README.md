@@ -1,69 +1,59 @@
 # 张凯 · 学术主页（中英双语）
 
-以 [academicpages / Minimal Mistakes](https://github.com/academicpages/academicpages.github.io) 的「左侧作者侧栏 + 右侧内容」版式为参考重做的**零构建静态站**，部署于 GitHub Pages：`https://zhangkaicr.github.io/`。
+基于官方 [Academic Pages](https://academicpages.github.io/) / Minimal Mistakes **Jekyll 模板**构建，部署在 GitHub Pages：<https://zhangkaicr.github.io/>。
 
-不使用 Jekyll，不需要 Ruby／bundle，仓库里的 `.nojekyll` 保证 GitHub 直接按静态文件发布。
+模板源码：<https://github.com/academicpages/academicpages.github.io>（MIT License）。本站保留其目录结构（`_config.yml` / `_pages` / `_publications` / `_talks` / `_teaching` / `_data` / `_includes` / `_layouts` / `_sass`），并叠加了一层中英双语支持。
 
-## 文件结构
+## 部署方式
 
-```
-.
-├── index.html            页面骨架（一般不用改）
-├── 404.html              404 自动跳回首页
-├── .nojekyll             禁止 GitHub 跑 Jekyll 构建
-├── files/                可下载资料（会议讲义 PPTX）
-├── assets/
-│   ├── content.js        ★ 全部文案与数据，日常只改这个文件
-│   ├── app.js            渲染 + 中英切换逻辑
-│   ├── style.css         样式
-│   └── favicon.svg
-└── README.md
-```
+- **不使用**「Deploy from a branch」的 legacy Jekyll 构建，而是走官方模板自带的 `.github/workflows/jekyll.yml`（GitHub Actions，Jekyll 4.4 + Ruby 3.1）。
+- GitHub Pages 设置里 Source 必须是 **GitHub Actions**（不是 "Deploy from a branch"）。
+- 默认分支 `main`；每次 push 自动构建、部署到 `https://zhangkaicr.github.io/`。
+- 本地预览需要 Ruby 3.1 + Bundler：`bundle install` → `npm run build` → `bundle exec jekyll serve -l -H localhost`。
 
-## 一键切换怎么工作
+## 中英双语是怎么做的
 
-- 侧栏（桌面）和顶部条（手机）各有 `中文 / EN` 按钮，点一下**即时切换**，不刷新页面。
-- 优先级：`?lang=zh` / `?lang=en` > 浏览器本地记忆（localStorage）> 浏览器语言（中文环境默认中文，其他默认英文）。
-- 切换时同步更新：全部文案、`<html lang>`、`<title>`、meta description、URL 中的 `?lang=`。
-- 可分享固定语言链接：`https://zhangkaicr.github.io/?lang=en`、`https://zhangkaicr.github.io/?lang=zh`。
+不用 Jekyll 多语言插件（GitHub Pages 不支持任意插件），全部由模板自带的 Liquid + 一个原生 JS 完成：
 
-## 怎么改内容
+| 文件 | 作用 |
+| --- | --- |
+| `_data/i18n.yml` | 侧栏、顶栏、页脚等界面文案的中英字段 |
+| `_data/navigation.yml` | 导航项 `title`（英）/ `title_zh`（中） |
+| `_includes/head/custom.html` | 加载 `bilingual.css`；**在 `<head>` 里尽早**根据 `?lang=` / localStorage / 浏览器语言设置 `<html data-lang>`，避免闪烁 |
+| `_includes/footer/custom.html` | 加载 `lang-switch.js` + 双语页脚说明 |
+| `assets/css/bilingual.css` | `html[data-lang="zh"] .lang-en { display:none }`（反之亦然）+ 所有 `kz-` 前缀内容组件 |
+| `assets/js/lang-switch.js` | 点击切换、同步按钮状态、`<html lang>`、标题、meta description、URL `?lang=`、localStorage；顺带做论文筛选 |
+| `_includes/masthead.html` / `author-profile.html` | 顶栏与作者侧栏渲染 `.lang-zh` / `.lang-en` 两套文本和语言按钮 |
+| `_layouts/single.html` / `archive.html` | 页面标题支持 `title_zh` / `title_en` 双语 |
 
-只编辑 `assets/content.js`：
+- **一键切换**：顶栏和侧栏各有 `中文 / EN` 按钮，点击即时切换、不刷新页面。
+- 优先级：`?lang=zh|en` > 浏览器本地记忆 > 浏览器语言（中文环境默认中文）。
+- 可分享固定语言链接： `https://zhangkaicr.github.io/?lang=en`、`https://zhangkaicr.github.io/?lang=zh`。
+- 所有正文用 `<div class="lang-zh">…</div><div class="lang-en">…</div>` 成对书写；论文标题、期刊名按学术惯例保留英文原文，不做翻译。
+
+## 内容在哪改
 
 | 想改什么 | 改哪里 |
 | --- | --- |
-| 姓名 / 头衔 / 单位 / 地点 | `profile.zh` 与 `profile.en` |
-| 界面文案、各段中英文正文 | `i18n.zh` / `i18n.en` / `about.zh` / `about.en` |
-| 新增论文 | 往 `publications` 追加 `{ year, title, journal, doi, pmid, tag:{zh,en} }`，标题保留英文原文，两边自动同步 |
-| 教育 / 工作 / 学术任务 | `experience.education` / `experience.appointments` / `experience.service` |
-| 教学条目 | `teaching` |
-| 公众号 / B站 / 小红书 | `outreach`，`href` 为空时只显示名称与提示文字 |
-| 侧栏图标链接 | `links` |
-| Google Scholar / CV | 在 `meta.scholar` 或 `meta.cv` 填入链接，首页按钮自动出现 |
+| 姓名 / 单位 / 侧栏链接 / ORCID | `_config.yml` 的 `author` 段 + `_data/i18n.yml` |
+| 导航项 | `_data/navigation.yml` |
+| 首页、简历、教学、报告、科普、联系页 | `_pages/about.md`、`cv.md`、`talks.html`、`teaching.html`、`outreach.md`、`contact.md` |
+| 新增论文 | 在 `_publications/` 新建一个 `.md`，参考现有文件的 front matter（`title/year/venue/doi/pmid/tag_zh/tag_en`），列表页自动收录 |
+| 新增报告 / 课程 | `_talks/` 或 `_teaching/` 新建 `.md` |
+| 界面文案、组件样式 | `_data/i18n.yml` / `assets/css/bilingual.css` |
+| 讲义等附件 | `files/` 目录，通过 `/files/<文件名>` 访问 |
 
-改完 `git add . && git commit -m "update content" && git push`，GitHub Pages 约 1–2 分钟后更新。
+## 内容来源
 
-## 本地预览
+- **15 篇论文**：ORCID 公开记录 `0000-0002-2292-3696`（含 DOI / PubMed）。ORCID 私有链接 `/my-orcid?orcid=...` 已统一换成公开地址 `https://orcid.org/0000-0002-2292-3696`。
+- **单位**：中国医学科学院肿瘤医院 · 肝胆外科（本人提供）。
+- **教育 / 工作经历 / 技能**：来自 `简历.docx`。**手机号、年龄、婚姻状况等隐私信息未发布在公网上**。
+- **CCI 2025 受邀报告**：来自年会邀请函与会议沟通记录，2025.11.22 南京、15 分钟；29 页讲义放在 `files/KaiZhang-TTE-CCI2025.pptx`。
+- **公众号**：「灵活胖子的科研进步之路」「灵活胖子的柳叶刀进步之路」，微信内搜索名称关注（公众号没有公开直链）。
+- **B站**：`https://space.bilibili.com/627812104`；**小红书**：小红书号 `94148178085`，当前链接指向站内搜索结果页，拿到 `/user/profile/...` 形式的个人主页后替换即可。
+- `teaching` 三条为按现有课程/视频方向整理的描述，可按实际开课情况调整。
+- 头像 `images/kz-avatar.svg` 目前是 KZ 字母组合，换成真实照片后改 `_config.yml` 的 `author.avatar`。
 
-```bash
-cd academic-site
-python -m http.server 8000
-# 浏览器打开 http://localhost:8000/
-```
+## 回滚
 
-## 内容来源与待确认项
-
-- **论文**：15 项来自 ORCID 公开记录 `0000-0002-2292-3696`，含 DOI / PubMed 链接。注意 ORCID 里填的是 `/my-orcid?orcid=...` 私有地址，站点统一使用公开地址 `https://orcid.org/0000-0002-2292-3696`。
-- **单位**：`中国医学科学院肿瘤医院 · 肝胆外科`（本人提供）。
-- **教育 / 工作经历、技能**：来自 `简历.docx`。**手机号、年龄、婚姻状况等隐私信息未发布在公网上**。
-- **CCI 2025 受邀报告**：来自年会邀请函与会议沟通记录，2025.11.22 上午、南京、15 分钟，题目《基于因果推断的目标试验模拟框架在医学研究中的应用》。对应 29 页讲义放在 `files/KaiZhang-TTE-CCI2025.pptx`（约 34 MB），页面「学术任务与受邀报告」下有下载链接；如不想公开讲义，删掉文件并把 `meta.slides` 置空即可。
-- **公众号**：「灵活胖子的科研进步之路」「灵活胖子的柳叶刀进步之路」，微信内搜索名称关注；如要放二维码，把图片放进 `assets/` 并在 `outreach` 里加图片项。
-- **B站**：`https://space.bilibili.com/627812104`（UID 由昵称检索确认）。
-- **小红书**：小红书号 `94148178085`；目前链接指向站内搜索结果页，如果拿到个人主页 URL（形如 `https://www.xiaohongshu.com/user/profile/xxxx`），直接替换 `meta.xiaohongshu`、`links`、`outreach` 中的地址即可。
-- `teaching` 三条为按现有课程/视频方向整理的描述，如需精确课程名与时间可自行调整。
-- 头像目前是 KZ 字母组合图形，替换为真实照片：把图片放到 `assets/`，再改 `index.html` 里的 `<a class="avatar">…</a>`。
-
-## 参考与致谢
-
-版式参考 academicpages（forked from Minimal Mistakes，MIT License）。本静态实现为独立重写，无 Jekyll 依赖。
+`static-version` 分支保留了改版前的零构建静态站版本。如需回退，同时把 GitHub Pages 的 Source 改回 "Deploy from a branch"（main / 根目录）。

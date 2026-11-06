@@ -1,0 +1,240 @@
+/* =============================================================
+   bilingual.css — academicpages 之上的中英双语层与内容组件
+   所有自定义类统一 kz- 前缀，避免与 Minimal Mistakes 冲突。
+   颜色用半透明中性色，兼容模板自带的浅色/深色主题切换。
+   ============================================================= */
+
+/* 语言可见性：<html data-lang="zh|en"> 由 head/custom.html 中的早期脚本设置 */
+html[data-lang="zh"] .lang-en { display: none !important; }
+html[data-lang="en"] .lang-zh { display: none !important; }
+
+html[data-lang="zh"] .page__content,
+html[data-lang="zh"] .archive {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+/* 侧栏角色 / 语言开关 */
+.kz-role {
+  margin: .15em 0 .5em;
+  font-size: .78em;
+  line-height: 1.55;
+  opacity: .78;
+}
+.kz-lang-switch {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: .7rem 0 1rem;
+}
+.kz-lang-switch__label {
+  font-size: .68em;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .65;
+  margin-right: 6px;
+}
+.kz-lang__btn {
+  appearance: none;
+  border: 1px solid rgba(127,127,127,.32);
+  background: transparent;
+  color: inherit;
+  font: 600 .72em/1 inherit;
+  padding: .38em .7em;
+  cursor: pointer;
+  opacity: .7;
+  transition: background .18s ease, color .18s ease, opacity .18s ease;
+}
+.kz-lang__btn:first-of-type { border-radius: 999px 0 0 999px; }
+.kz-lang__btn:last-of-type { border-radius: 0 999px 999px 0; border-left: 0; }
+.kz-lang__btn + .kz-lang__btn { border-left: 0; }
+.kz-lang__btn:hover { opacity: 1; }
+.kz-lang__btn.is-active {
+  background: #146b74;
+  border-color: #146b74;
+  color: #fff;
+  opacity: 1;
+}
+.kz-lang.masthead__menu-item > a { display: none; }
+.kz-lang.masthead__menu-item { display: flex; align-items: center; }
+.kz-lang.masthead__menu-item .kz-lang__btn { font-size: .68em; padding: .3em .6em; }
+
+.kz-footer-note {
+  font-size: .72em;
+  opacity: .65;
+  text-align: center;
+  margin-bottom: .6rem;
+}
+
+/* 通用小组件 */
+.kz-subhead {
+  font-size: .78em;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #146b74;
+  margin: 2rem 0 .8rem;
+}
+.kz-lead { font-size: 1.06em; line-height: 1.85; opacity: .88; }
+.kz-note { font-size: .84em; opacity: .68; }
+.kz-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  padding: .45em 1em;
+  border: 1px solid #146b74;
+  border-radius: 4px;
+  background: #146b74;
+  color: #fff !important;
+  font-size: .82em;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+.kz-btn:hover { background: #0d4c58; border-color: #0d4c58; }
+.kz-btn--ghost { background: transparent; color: #146b74 !important; }
+.kz-btn--ghost:hover { background: rgba(20,107,116,.08); color: #146b74 !important; }
+.kz-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.3rem 0 1.6rem; }
+
+/* 首页研究方向卡片 */
+.kz-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+.kz-card {
+  border: 1px solid rgba(127,127,127,.24);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  background: rgba(127,127,127,.045);
+}
+.kz-card__badge {
+  display: inline-block;
+  font-size: .64em;
+  font-weight: 700;
+  letter-spacing: .09em;
+  color: #146b74;
+  background: rgba(20,107,116,.11);
+  border-radius: 3px;
+  padding: .3em .55em;
+  margin-bottom: .6rem;
+}
+.kz-card h3 { margin: 0 0 .4rem; font-size: 1rem; }
+.kz-card p { margin: 0; font-size: .86em; line-height: 1.7; opacity: .78; }
+
+/* 论文列表 */
+.kz-pub-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.2rem 0 .4rem;
+  flex-wrap: wrap;
+}
+.kz-search {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1px solid rgba(127,127,127,.3);
+  border-radius: 5px;
+  padding: 0 .7rem;
+  min-width: min(320px, 100%);
+}
+.kz-search input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .86em;
+  padding: .5rem 0;
+  width: 100%;
+}
+.kz-pub-count { font-size: .78em; opacity: .65; white-space: nowrap; }
+.kz-year {
+  font-size: 1.25em;
+  color: #146b74;
+  border-bottom: 1px solid rgba(127,127,127,.24);
+  padding-bottom: .3rem;
+  margin: 1.8rem 0 .5rem;
+}
+.kz-pub {
+  padding: .85rem 0;
+  border-bottom: 1px solid rgba(127,127,127,.16);
+}
+.kz-pub__title {
+  margin: 0 0 .3rem;
+  font-size: .95em;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.kz-pub__meta { margin: 0; font-size: .8em; opacity: .72; }
+.kz-pub__journal { font-style: italic; }
+.kz-tag {
+  display: inline-block;
+  margin-left: .6em;
+  padding: .05em .55em;
+  border-radius: 999px;
+  background: rgba(20,107,116,.11);
+  color: #146b74;
+  font-size: .92em;
+  font-style: normal;
+}
+.kz-pub__links { margin: .3rem 0 0; font-size: .78em; font-weight: 600; }
+.kz-pub__links .dot { opacity: .4; margin: 0 .5em; }
+.kz-empty { padding: 2rem 0; opacity: .6; }
+
+/* 简历 / 经历 */
+.kz-exp { border-top: 1px solid rgba(127,127,127,.24); }
+.kz-exp__item {
+  display: grid;
+  grid-template-columns: 8.5em minmax(0, 1fr);
+  gap: 1rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgba(127,127,127,.16);
+}
+.kz-exp__period { font-size: .8em; font-weight: 700; color: #146b74; padding-top: .15em; }
+.kz-exp__title { margin: 0 0 .15rem; font-size: .93em; font-weight: 600; }
+.kz-exp__org { margin: 0; font-size: .84em; opacity: .72; }
+.kz-exp__item.is-current .kz-exp__period { color: #b07b12; }
+.kz-exp__slides { display: inline-block; margin-top: .35rem; font-size: .8em; font-weight: 600; }
+
+/* 教学 / 报告时间线 */
+.kz-tl { border-left: 2px solid rgba(127,127,127,.24); padding-left: 1.4rem; }
+.kz-tl__item { position: relative; padding-bottom: 1.4rem; }
+.kz-tl__item::before {
+  content: "";
+  position: absolute;
+  left: -1.87rem;
+  top: .5em;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: #146b74;
+  box-shadow: 0 0 0 3px rgba(20,107,116,.14);
+}
+.kz-tl__period { font-size: .74em; font-weight: 700; letter-spacing: .04em; color: #146b74; }
+.kz-tl__item h3 { margin: .15rem 0 .3rem; font-size: .98em; }
+.kz-tl__item p { margin: 0; font-size: .86em; opacity: .78; line-height: 1.7; }
+
+/* 科普平台卡片 */
+.kz-accounts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .9rem; }
+.kz-account {
+  border: 1px solid rgba(127,127,127,.24);
+  border-radius: 7px;
+  padding: 1rem;
+  background: rgba(127,127,127,.045);
+}
+.kz-account__label { margin: 0 0 .3rem; font-size: .88em; font-weight: 700; }
+.kz-account__detail { margin: 0 0 .5rem; font-size: .8em; opacity: .75; line-height: 1.65; }
+.kz-account__hint { font-size: .76em; opacity: .6; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .kz-cards, .kz-accounts { grid-template-columns: 1fr; }
+  .kz-exp__item { grid-template-columns: 6.5em minmax(0,1fr); gap: .6rem; }
+}
+
+@media print {
+  .kz-lang-switch, .kz-lang, .kz-pub-tools { display: none !important; }
+}

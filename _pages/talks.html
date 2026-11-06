@@ -1,0 +1,22 @@
+---
+layout: archive
+title: "学术报告 / Talks"
+title_zh: "学术报告与受邀任务"
+title_en: "Invited Talks & Academic Activities"
+permalink: /talks/
+author_profile: true
+---
+
+<div class="lang-zh kz-note"><p>受邀在学术会议报告方法学工作，报告讲义公开下载。</p></div>
+<div class="lang-en kz-note"><p>Invited methodological talks at academic meetings; slides are available for download.</p></div>
+
+<div class="kz-tl">
+{% for talk in site.talks reversed %}
+<div class="kz-tl__item">
+  <span class="kz-tl__period">{{ talk.date | date: "%Y.%m.%d" }} · <span class="lang-zh">{{ talk.location_zh }}</span><span class="lang-en">{{ talk.location_en }}</span></span>
+  <h3><a href="{{ talk.url }}"><span class="lang-zh">{{ talk.title_zh | default: talk.title }}</span><span class="lang-en">{{ talk.title_en | default: talk.title }}</span></a></h3>
+  <p><span class="lang-zh">{{ talk.venue_zh }}</span><span class="lang-en">{{ talk.venue_en }}</span>{% if talk.duration %} · {{ talk.duration }}{% endif %}</p>
+  {% if talk.slidesurl %}<p><a href="{{ talk.slidesurl }}" download><span class="lang-zh">下载讲义 PPTX ↗</span><span class="lang-en">Download slides (PPTX) ↗</span></a>{% if talk.slides_note %} — <span class="lang-zh">{{ talk.slides_note_zh }}</span><span class="lang-en">{{ talk.slides_note_en }}</span>{% endif %}</p>{% endif %}
+</div>
+{% endfor %}
+</div>
