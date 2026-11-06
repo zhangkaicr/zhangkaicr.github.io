@@ -24,6 +24,7 @@ window.SITE = {
     /* 如日后有 Google Scholar 主页或 CV PDF，填入链接即会自动出现按钮 */
     scholar: "",
     cv: "",
+    slides: "files/KaiZhang-TTE-CCI2025.pptx",
     updated: "2026-11-06"
   },
 
@@ -85,6 +86,7 @@ window.SITE = {
       pubmed: "PubMed",
       searchHint: "微信内搜索名称即可关注",
       visitHint: "访问主页 ↗",
+      slidesLabel: "下载会议讲义（PPTX，约 34 MB）↗",
       current: "现任"
     },
     en: {
@@ -129,6 +131,7 @@ window.SITE = {
       pubmed: "PubMed",
       searchHint: "Search the name in WeChat to follow",
       visitHint: "Visit profile ↗",
+      slidesLabel: "Download talk slides (PPTX, ~34 MB) ↗",
       current: "Current"
     }
   },
@@ -185,9 +188,10 @@ window.SITE = {
     ],
     service: [
       {
-        period: "2025.11",
-        zh: { title: "受邀承担学术任务", org: "2025 中国医师协会介入医师年会（CCI 2025）· 南京" },
-        en: { title: "Invited academic faculty", org: "2025 Chinese Medical Doctor Association Interventional Physicians Annual Meeting (CCI 2025), Nanjing" }
+        period: "2025.11.22",
+        slides: true,
+        zh: { title: "受邀报告 · 基于因果推断的目标试验模拟框架在医学研究中的应用", org: "2025 中国医师协会介入医师年会（CCI 2025）· 南京 · 15 分钟" },
+        en: { title: "Invited talk · Applying the Causal-Inference Target Trial Emulation Framework in Medical Research", org: "CCI 2025, Chinese Medical Doctor Association Interventional Physicians Annual Meeting · Nanjing · 15 min" }
       }
     ]
   },

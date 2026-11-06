@@ -166,11 +166,14 @@
       var rows = g[1].map(function (it) {
         var c = pick(it);
         var period = it.period === "现任" ? t.current : it.period;
+        var slides = it.slides && S.meta.slides
+          ? '<a class="exp-item__slides" href="' + esc(S.meta.slides) + '" download>' + esc(t.slidesLabel) + "</a>"
+          : "";
         return '<div class="exp-item' + (it.current ? " is-current" : "") + '">' +
           '<span class="exp-item__period">' + esc(period) + "</span>" +
           '<div class="exp-item__body">' +
             '<p class="exp-item__title">' + esc(c.title) + "</p>" +
-            '<p class="exp-item__org">' + esc(c.org) + "</p>" +
+            '<p class="exp-item__org">' + esc(c.org) + "</p>" + slides +
           "</div></div>";
       }).join("");
       return '<div class="exp-group"><h3 class="subhead">' + esc(g[0]) + '</h3><div class="exp-list">' + rows + "</div></div>";

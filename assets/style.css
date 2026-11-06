@@ -433,6 +433,10 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
 .exp-item.is-current .exp-item__period { color: #b07b12; }
 .exp-item__title { margin: 0 0 2px; font-size: 14.5px; font-weight: 600; }
 .exp-item__org { margin: 0; font-size: 13px; color: var(--muted); }
+.exp-item__slides {
+  display: inline-block; margin-top: 6px;
+  font-size: 12.5px; font-weight: 600;
+}
 
 /* 科普平台 */
 .accounts { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0,1fr)); }
