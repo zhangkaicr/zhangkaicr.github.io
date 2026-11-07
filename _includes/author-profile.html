@@ -50,9 +50,6 @@
       {% if author.xiaohongshu %}
         <li><a href="{{ author.xiaohongshu }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-hashtag icon-pad-right" aria-hidden="true"></i><span class="lang-zh">{{ site.data.i18n.xhs_label_zh }}</span><span class="lang-en">{{ site.data.i18n.xhs_label_en }}</span></a></li>
       {% endif %}
-      {% if author.slides %}
-        <li><a href="{{ author.slides | prepend: base_path }}" download><i class="fas fa-fw fa-file-powerpoint icon-pad-right" aria-hidden="true"></i><span class="lang-zh">{{ site.data.i18n.slides_label_zh }}</span><span class="lang-en">{{ site.data.i18n.slides_label_en }}</span></a></li>
-      {% endif %}
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
       {% if author.academia %}

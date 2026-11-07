@@ -41,12 +41,6 @@ author_profile: true
   </div>
 </div>
 
-<h2 class="kz-subhead">公开讲义</h2>
-
-<p>2025 中国医师协会介入医师年会（CCI 2025）受邀报告讲义，共 29 页，覆盖潜在结果框架、目标试验模拟七要素、倾向评分、克隆删失加权、g-方程与 LMTP 等方法。</p>
-
-<div class="kz-actions"><a class="kz-btn" href="/files/KaiZhang-TTE-CCI2025.pptx" download>下载讲义 PPTX（约 34 MB）↗</a></div>
-
 </div>
 
 <div class="lang-en">
@@ -82,11 +76,5 @@ author_profile: true
     <p>灵活胖子的科研进步之路<br>灵活胖子的柳叶刀进步之路</p>
   </div>
 </div>
-
-<h2 class="kz-subhead">Open teaching material</h2>
-
-<p>Slides from the invited talk at CCI 2025 (29 pages), covering the potential outcomes framework, the seven elements of target trial emulation, propensity scores, clone-censor-weighting, the g-formula and LMTP.</p>
-
-<div class="kz-actions"><a class="kz-btn" href="/files/KaiZhang-TTE-CCI2025.pptx" download>Download talk slides (PPTX, ~34 MB) ↗</a></div>
 
 </div>

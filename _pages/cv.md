@@ -33,25 +33,11 @@ redirect_from:
 
 <div class="kz-exp__item"><span class="kz-exp__period">2018 – 2021</span><div><p class="kz-exp__title">肿瘤外科专科医师规范化培训</p><p class="kz-exp__org">中国医学科学院肿瘤医院</p></div></div>
 
+<div class="kz-exp__item"><span class="kz-exp__period">2021 – 2024</span><div><p class="kz-exp__title">介入治疗科</p><p class="kz-exp__org">天津市肿瘤医院</p></div></div>
+
 <div class="kz-exp__item is-current"><span class="kz-exp__period">现任</span><div><p class="kz-exp__title">肝胆外科</p><p class="kz-exp__org">中国医学科学院肿瘤医院</p></div></div>
 
 </div>
-
-<h2 class="kz-subhead">学术任务与受邀报告</h2>
-<div class="kz-exp">
-
-<div class="kz-exp__item"><span class="kz-exp__period">2025.11.22</span><div><p class="kz-exp__title">受邀报告 · 基于因果推断的目标试验模拟框架在医学研究中的应用</p><p class="kz-exp__org">2025 中国医师协会介入医师年会（CCI 2025）· 南京 · 15 分钟</p><a class="kz-exp__slides" href="/files/KaiZhang-TTE-CCI2025.pptx" download>下载会议讲义（PPTX，约 34 MB）↗</a></div></div>
-
-</div>
-
-<h2 class="kz-subhead">方法与技能</h2>
-<ul>
-<li><strong>临床研究</strong>：临床流行病学、临床统计学、真实世界研究、目标试验模拟、因果推断、生存分析、临床预测模型构建与验证</li>
-<li><strong>工具</strong>：R / Python、SPSS；可复现分析流程与演示代码</li>
-<li><strong>组学</strong>：RNA 提取与质控、转录组差异分析与 GO/KEGG/WGCNA/GSEA、免疫组库、单细胞悬液制备</li>
-<li><strong>临床</strong>：腹部外科 3–4 级手术（第一助手）、腹腔镜及开腹胆囊／阑尾切除、开腹非中央区肝切除、普外科围手术期处理</li>
-<li><strong>资质</strong>：主治医师资格证、住院医师规范化培训合格证书、GCP 证书、英语六级</li>
-</ul>
 
 </div>
 
@@ -79,24 +65,10 @@ redirect_from:
 
 <div class="kz-exp__item"><span class="kz-exp__period">2018 – 2021</span><div><p class="kz-exp__title">Surgical Oncology Fellowship</p><p class="kz-exp__org">Cancer Hospital, Chinese Academy of Medical Sciences</p></div></div>
 
+<div class="kz-exp__item"><span class="kz-exp__period">2021 – 2024</span><div><p class="kz-exp__title">Department of Interventional Therapy</p><p class="kz-exp__org">Tianjin Cancer Hospital</p></div></div>
+
 <div class="kz-exp__item is-current"><span class="kz-exp__period">Current</span><div><p class="kz-exp__title">Department of Hepatobiliary Surgery</p><p class="kz-exp__org">Cancer Hospital, CAMS &amp; PUMC</p></div></div>
 
 </div>
-
-<h2 class="kz-subhead">Invited Academic Activities</h2>
-<div class="kz-exp">
-
-<div class="kz-exp__item"><span class="kz-exp__period">2025.11.22</span><div><p class="kz-exp__title">Invited talk · Applying the Causal-Inference Target Trial Emulation Framework in Medical Research</p><p class="kz-exp__org">CCI 2025, Chinese Medical Doctor Association Interventional Physicians Annual Meeting · Nanjing · 15 min</p><a class="kz-exp__slides" href="/files/KaiZhang-TTE-CCI2025.pptx" download>Download talk slides (PPTX, ~34 MB) ↗</a></div></div>
-
-</div>
-
-<h2 class="kz-subhead">Methods &amp; Skills</h2>
-<ul>
-<li><strong>Clinical research</strong>: clinical epidemiology and biostatistics, real-world evidence, target trial emulation, causal inference, survival analysis, clinical prediction models</li>
-<li><strong>Tools</strong>: R / Python, SPSS; reproducible analysis workflows and teaching code</li>
-<li><strong>Omics</strong>: RNA extraction and QC, transcriptomic differential expression, GO/KEGG/WGCNA/GSEA, immune repertoire, single-cell suspension preparation</li>
-<li><strong>Clinical</strong>: abdominal surgery (first assistant), laparoscopic/open cholecystectomy and appendectomy, open non-central hepatectomy, perioperative care</li>
-<li><strong>Credentials</strong>: attending physician certification, residency completion certificate, GCP certificate</li>
-</ul>
 
 </div>
