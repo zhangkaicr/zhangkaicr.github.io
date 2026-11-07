@@ -56,7 +56,7 @@ redirect_from:
 
 <p>临床医学本科毕业于华北理工大学医学部，外科学硕士毕业于北京大学医学部，肿瘤外科专业型博士毕业于北京协和医学院；先后在北京大学第一医院、北京大学滨海医院完成住院医师规范化培训与普外科临床工作，在中国医学科学院肿瘤医院完成肿瘤外科专科医师规范化培训，2021–2024 年于天津市肿瘤医院介入治疗科工作，现任中国医学科学院肿瘤医院肝胆外科。</p>
 
-<p>熟练运用 R / Python 进行临床数据分析，覆盖真实世界研究、生存分析、临床预测模型、目标试验模拟与因果推断，也做过转录组、免疫组库与单细胞方向的组学分析。研究问题多来自肝胆肿瘤与介入治疗一线。ORCID 收录 15 项成果，见于 <i>International Journal of Surgery</i>、<i>JHEP Reports</i>、<i>Frontiers in Immunology</i>、<i>Journal of Translational Medicine</i> 等期刊；并开发了 R 包 <a href="/software/">mlr3HTE</a>。</p>
+<p>熟练运用 R / Python 进行临床数据分析，覆盖真实世界研究、生存分析、临床预测模型、目标试验模拟与因果推断，也做过转录组、免疫组库与单细胞方向的组学分析。研究问题多来自肝胆肿瘤与介入治疗一线。ORCID 收录 15 项成果，见于 <i>JHEP Reports</i>、<i>Frontiers in Immunology</i>、<i>Journal of Translational Medicine</i> 等期刊；并开发了 R 包 <a href="/software/">mlr3HTE</a>。</p>
 
 <p>近年尤其关注「设计先于分析」，同时通过公众号、B站与系列实战培训班，把目标试验模拟、机器学习因果推断与动态预测模型讲给临床研究者听，强调方法学结论可以被复现、被质疑、被改进。</p>
 
@@ -108,7 +108,7 @@ redirect_from:
 
 <p>I studied clinical medicine at North China University of Science and Technology, completed a professional master's degree in surgery at Peking University Health Science Center, and a professional doctorate in surgical oncology at Peking Union Medical College. Clinical training includes residency at Peking University First Hospital, general surgery at Peking University Binhai Hospital, and a surgical oncology fellowship at the Cancer Hospital, CAMS. From 2021 to 2024 I worked in the Department of Interventional Therapy at Tianjin Cancer Hospital, and I am currently with the Department of Hepatobiliary Surgery at the Cancer Hospital, CAMS &amp; PUMC.</p>
 
-<p>I use R and Python for real-world evidence, survival analysis, clinical prediction models, target trial emulation and causal inference, as well as transcriptomic, immune-repertoire and single-cell analyses. My questions come largely from hepato-biliary oncology and interventional practice. Fifteen works are recorded in ORCID, including papers in the <i>International Journal of Surgery</i>, <i>JHEP Reports</i>, <i>Frontiers in Immunology</i> and <i>Journal of Translational Medicine</i>; I also maintain the R package <a href="/software/">mlr3HTE</a>.</p>
+<p>I use R and Python for real-world evidence, survival analysis, clinical prediction models, target trial emulation and causal inference, as well as transcriptomic, immune-repertoire and single-cell analyses. My questions come largely from hepato-biliary oncology and interventional practice. Fifteen works are recorded in ORCID, including papers in <i>JHEP Reports</i>, <i>Frontiers in Immunology</i> and <i>Journal of Translational Medicine</i>; I also maintain the R package <a href="/software/">mlr3HTE</a>.</p>
 
 <p>A particular focus is design before analysis. Through WeChat official accounts, Bilibili and hands-on training courses, I teach target trial emulation, machine-learning causal inference and dynamic prediction models to clinical researchers, with an emphasis on conclusions that can be reproduced, challenged and improved.</p>
 
