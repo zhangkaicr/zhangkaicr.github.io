@@ -2,8 +2,7 @@
 layout: single
 permalink: /
 title: "张凯 / Kai Zhang"
-title_zh: "关于我"
-title_en: "About me"
+hide_title: true
 author_profile: true
 redirect_from:
   - /about/
