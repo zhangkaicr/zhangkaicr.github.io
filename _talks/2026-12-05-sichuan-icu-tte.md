@@ -10,6 +10,10 @@ venue_en: "2026 Academic Meeting of the Critical Care Medicine Committee, Sichua
 location_zh: "成都"
 location_en: "Chengdu, China"
 duration: "60 min"
+slidesurl: "/files/KaiZhang-TTE-CriticalCare-2026.pptx"
+slides_note: true
+slides_note_zh: "74 页讲义"
+slides_note_en: "74 slides"
 summary_zh: "受邀担任「案例解析：重症领域的 TTE」讲者。以 Intensive Care Medicine (2025) 碳酸氢钠治疗重症代谢性酸中毒患者死亡率的目标试验模拟研究为案例，完整拆解从证据缺口、TTE 七要素与因果假定、队列与结局定义，到 G 计算主分析、REM 敏感性分析双路径互证、结果判读与因果假定复盘的方法学链条。"
 summary_en: "Invited speaker for the session 'Case Study: Target Trial Emulation in Critical Care'. Using a 2025 Intensive Care Medicine target trial emulation of sodium bicarbonate for severe metabolic acidosis as a worked example, the talk walks through the full chain: evidence gap, TTE protocol elements and causal assumptions, cohort and outcome definition, dual estimation via g-computation and REM sensitivity analysis, results interpretation and a review of causal assumptions."
 author_profile: true
@@ -27,6 +31,7 @@ author_profile: true
 <li><strong>讨论结论</strong>：与既往 RCT 及在研 RCT 对照、样本量测算、优势与局限，最后回到因果假定复盘。</li>
 </ul>
 <p>整场报告的落点不在某一篇文章的结论，而在「先写出可识别的目标试验协议，再谈估计方法」这一设计优先的思路，以及如何把同一套方法学迁移到重症医学的其他真实世界问题上。</p>
+<p><a href="/files/KaiZhang-TTE-CriticalCare-2026.pptx" download>下载讲义 PPTX（74 页，约 6 MB）↗</a></p>
 </div>
 
 <div class="lang-en">
@@ -41,4 +46,5 @@ author_profile: true
 <li><strong>Discussion</strong>: comparison with completed and ongoing RCTs, sample-size considerations, strengths and limitations, and a final review of the causal assumptions.</li>
 </ul>
 <p>The emphasis is not on the conclusion of any single paper but on design before estimation: specify an identifiable target trial protocol first, then choose the estimator — and on how the same framework transfers to other real-world questions in critical care.</p>
+<p><a href="/files/KaiZhang-TTE-CriticalCare-2026.pptx" download>Download slides (PPTX, 74 pages, ~6 MB) ↗</a></p>
 </div>
